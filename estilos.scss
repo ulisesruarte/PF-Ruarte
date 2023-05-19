@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2? family= Crimson+Text:ital@1 & family= Roboto &familia= Roboto+Mono:ital,peso@1,100 & display=swap');
+
+/* font-family: 'Crimson Text', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Mono', monospace; */
+
+@import url('https://fonts.googleapis.com/css2? family= Crimson+Text:ital@1 & family= Roboto & family= Roboto+Mono:ital,wght@1,100 & display=swap');
+
+/* font-family: 'Crimson Text', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Mono', monospace; */
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+$ancho: 100%;
+$alto: 50%;
+
+// fuentes
+$font1: 'Roboto Mono', monospace;
+$font2: 'Crimson Text', serif;
+$font3: 'Roboto', sans-serif;
+
+
+
+$var1: 100px;
+$var2: 80px;
+
+
+// colores
+
+$color1: #333;
+$color2: #fff;
+$color3: black;
+$color4: #21e921;
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #beb8b8;
+    height: $var2;
+    width: $ancho;
+    color: $color2;
+    padding: 20px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    .logo {
+        float: left;
+        font-weight: bold;
+        text-shadow: 0 0 5px $color1;
+
+        .span {
+            color: $color3;
+            text-shadow: 0 0 5px black 0 0 5px black
+        }
+    }
+
+    .barra {
+        float: right;
+
+        li {
+            list-style: none;
+            display: inline-block;
+
+            a {
+                color: $color2;
+                text-decoration: none;
+
+                &:hover {
+                    color: #333;
+                }
+            }
+        }
+    }
+}
+
+.fondo {
+    height: calc(100vh - 80px);
+    width: $ancho;
+    background-color: $color3;
+    background-image: url(img/iphones-gfc0487711_1280.jpg);
+    background-size: cover;
+    background-position: right;
+
+
+}
+    .call {
+        background-image: linear-gradient( #ffffffa8 , #333333b7 );
+        color: #fff;
+        background-color: #ffffff3b;
+        border: 1px solid $color3;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        float: right;
+        margin: 30px;
+        padding: 30px;
+
+        h1 {
+            color: $color3;
+            font-size: 35px;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 3px #333;
+            animation-duration: 2s;
+            animation-name: aparecer;
+            animation-delay: 5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes aparecer {
+0%{
+        opacity: 0;
+            }
+
+100%{
+        opacity: 1;
+            }
+        }
+
+        p {
+            color: $color3;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        a {
+            color: #fff;
+            background-color: $color3;
+            text-decoration: none;
+            padding: 10px 20px;
+            text-transform: capitalize;
+            border: 2px solid $color3;
+            border-radius: 7px;
+
+            &:hover {
+                background-color: $color1;
+            }
+        }
+    }
+
+.formulario {
+    display: flex;
+    padding: 10px;
+    font-size: 25px;
+
+    .contacto {
+        width: 100%;
+        min-height: 450px;
+        text-align: center;
+        color: $color3;
+        border: 1px solid rgba(0, 0, 0, 0.404);
+        padding: 10px;
+        border-radius: 7px;
+
+        li {
+            list-style: none;
+            display: inline-block;
+            padding: 15px;
+
+            a {
+                color: $color3;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+h2.sec {
+    text-align: center;
+    background-color: $color3;
+    color: $color2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    padding: 15px;
+    animation-name: circulo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes circulo{
+    0%{
+        border-radius: 0;
+        opacity: 0;
+    }
+    50%{
+        border-radius: 30px;
+        transform: translate(17px);
+        background-color: black;
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100%{
+        border-radius: 10px;
+        transform: translate(-17px);
+    }
+}
+
+@mixin sizes($width, $height, $bsize, $bposition){
+    width: $width;
+    height: $height;
+    background-size: $bsize;
+    background-position: $bposition;
+}
+
+.celulares {
+    background-color: $color2;
+    justify-content: space-around;
+    display: flex;
+    padding: 15px;
+
+    .productos {
+        border: 1px solid black;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 10px;
+
+        .iphone-img img {
+            @include sizes(300px, 210px, cover, center)
+            // width: 300px;
+            // height: 210px;
+            // background-size: cover;
+            // background-position: center;
+        }
+        .iphone11-img img{
+            @include sizes(300px, 210px, cover, center)
+        }
+
+        .samsungj7-img img{
+            @include sizes(300px, 210px, cover, center)
+        }
+
+        .samsungj4-img img{
+            @include sizes(300px, 210px, cover, center)
+        }
+
+        .samsungj6-img img{
+            @include sizes(300px, 210px, cover, center)
+        }
+
+        .samsungj3-img img{
+            @include sizes(300px, 210px, cover, center)
+        }
+
+        .samsungj2-img img{
+            @include sizes(300px, 210px, cover, center)
+        }
+
+        .samsungj1-img img{
+            @include sizes(300px, 210px, cover, center)
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            font-weight: 1000;
+            text-align: center;
+        }
+
+        h4 {
+            margin-bottom: 20px;
+            font-family: $font1;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        a {
+            background-color: $color3;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 10px;
+            text-transform: capitalize;
+            border: 2px solid black;
+            text-align: center;
+
+            &:hover {
+                background-color: blue;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.08);
+            transition: all 0.9s;
+        }
+    }
+}
+
+@media only screen and (max-width:480px) {
+    h1{
+        font-size: 25px;
+    }
+    .celulares{
+        flex-direction: column;
+    }
+    .formulario{
+        flex-direction: column;
+    }
+    .nosotros{
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width:481px) and (max-width:780px) {
+    .celulares{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.nosotros {
+    display: flex;
+    padding: 15px;
+
+    .nosotros__nosotros {
+        width: 100%;
+        min-height: 480px;
+        text-align: center;
+        color: $color3;
+        border: 1px solid rgba(0, 0, 0, 0.308);
+        padding: 20px;
+        border-radius: 7px;
+
+        h3 {
+            font-size: 35px;
+            text-transform: capitalize;
+            padding: 15px;
+            font-family: $font3;
+            text-shadow: 0 0 5px #333;
+        }
+
+        h4 {
+            font-size: 25px;
+            padding: 30px;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .sam {
+            font-size: 30px;
+            padding: 10px;
+            font-family: 'Crimson Text', serif;
+            color: blue;
+            text-shadow: 0 0 5px #333;
+        }
+
+        .mot {
+            @extend .sam;
+            color: $color3;;
+        }
+
+        .iph {
+            @extend .sam;
+            color: pink;
+        }
+
+        p {
+            font-size: 35px;
+            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+        }
+    }
+}
+
+.galeria {
+    background-color: $color2;
+    width: $ancho;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(8, 200px);
+    padding: 20px;
+    grid-gap: 15px;
+
+    .item {
+        border: 1px solid black;
+        border-radius: 7px;
+        background-size: cover;
+        background-position: center;
+
+        &:hover {
+            transform: scale(1.09);
+            transition: all 0.9s;
+        }
+    }
+
+    .item1 {
+        background-image: url(img/android-g779440016_640.jpg);
+        /* grid-column: 1/2;
+            grid-row: 1/3; */
+    }
+
+    .item2 {
+        background-image: url(img/cellphones-g73eb54059_640.jpg);
+        /* grid-column: 2/3;
+            grid-row: 1/2; */
+    }
+
+    .item3 {
+        background-image: url(img/cellphones-g9f8479ba2_1280.jpg);
+        /* grid-column: 3/5;
+            grid-row: 1/2; */
+    }
+
+    .item4 {
+        background-image: url(img/iphones-gfc0487711_1280.jpg);
+        /* grid-column: 2/3;
+            grid-row: 2/4; */
+    }
+
+    .item5 {
+        background-image: url(img/cellphones-g73eb54059_640.jpg);
+        /* grid-column: 3/4;
+            grid-row: 2/3; */
+    }
+
+    .item6 {
+        background-image: url(img/mobile-g03f014300_640.jpg);
+        /* grid-column: 4/5;
+            grid-row: 2/3;  */
+    }
+
+    .item7 {
+        background-image: url(img/samsung-g264de75e1_640.jpg);
+        /* grid-column: 1/2;
+            grid-row: 3/4; */
+    }
+
+    .item8 {
+        background-image: url(img/samsung-g264de75e1_640.jpg);
+        /* grid-column: 3/5;
+            grid-row: 3/4; */
+    }
+}
+
+@media only screen and (min-width:480px) {
+    .galeria{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 200px);
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1023px) {
+    .galeria{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .item1{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .item2{
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+    .item3{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .item4{
+        grid-column: 2/4;
+        grid-row: 2/3;
+    }
+    .item5{
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+    .item6{
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+    .item7{
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+    .item8{
+        grid-column: 2/4;
+        grid-row: 4/5;
+    }
+
+}
+
+@media only screen and (min-width:1024px) {
+    .galeria{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 200px 200px;
+    }
+}
+
+footer {
+    text-align: center;
+    font-size: 30px;
+    background-color: $color3;
+    color: $color2;
+    padding: 20px;
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: orange;
+        letter-spacing: 6px;
+        font-size: 50px;
+    }
+}
+
+.subir {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-family: 25px;
+    color: $color2;
+    background-color: $color4;
+    text-align: center;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border: 3px solid #fff;
+
+    .subir:hover {
+        box-shadow: 0 0 5px #fff;
+        color: #fff;
+    }
+}
+
+// comienzo de bootstrap
+.logo-inicio {
+    float: left;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px $color1;
+    font-size: 25px;
+
+    .span {
+        color: $color3;
+        font-weight: bold;
+        text-shadow: 0 0 5px black 0 0 5px black
+    }
+}
+.carousel-inner {
+    width: $ancho;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+.card a {
+    background-color: $color3;
+}
+.card {
+    text-align: center;
+}
+.card-title {
+    font-weight: bold;
+}
+// fin de boostrap
