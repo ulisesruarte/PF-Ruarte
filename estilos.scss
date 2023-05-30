@@ -42,54 +42,43 @@ html {
     scroll-behavior: smooth;
 }
 
-header {
-    background-color: #beb8b8;
-    height: $var2;
-    width: $ancho;
-    color: $color2;
-    padding: 20px;
-    font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.navbar{
+    background-image: linear-gradient( #ffffffa8 , #33333379 );
 
-    .logo {
+    .logo-inicio {
         float: left;
         font-weight: bold;
+        color: #fff;
         text-shadow: 0 0 5px $color1;
-
+        font-size: 25px;
+    
         .span {
             color: $color3;
+            font-weight: bold;
             text-shadow: 0 0 5px black 0 0 5px black
         }
     }
 
-    .barra {
-        float: right;
-
-        li {
-            list-style: none;
-            display: inline-block;
-
-            a {
-                color: $color2;
-                text-decoration: none;
-
-                &:hover {
-                    color: #333;
-                }
-            }
-        }
+    li{
+        font-weight: 900;
+        color: #d32777;
     }
+}
+
+
+.carousel-inner {
+    width: $ancho;
+    background-size: cover;
+    background-position: center;
 }
 
 .fondo {
     height: calc(100vh - 80px);
     width: $ancho;
     background-color: $color3;
-    background-image: url(img/iphones-gfc0487711_1280.jpg);
+    background-image: url(img/cellphones-g9f8479ba2_1280.jpg);
     background-size: cover;
     background-position: right;
-
-
 }
     .call {
         background-image: linear-gradient( #ffffffa8 , #333333b7 );
@@ -105,7 +94,8 @@ header {
             color: $color3;
             font-size: 35px;
             margin-bottom: 20px;
-            text-shadow: 3px 3px 3px #333;
+            text-shadow: 2px 2px #333;
+            font-weight: 900;
             animation-duration: 2s;
             animation-name: aparecer;
             animation-delay: 5s;
@@ -147,13 +137,14 @@ header {
 .formulario {
     display: flex;
     padding: 10px;
-    font-size: 25px;
+    font-size: 20px;
 
     .contacto {
         width: 100%;
         min-height: 450px;
         text-align: center;
         color: $color3;
+        background-color: rgba(0, 0, 0, 0.171);
         border: 1px solid rgba(0, 0, 0, 0.404);
         padding: 10px;
         border-radius: 7px;
@@ -177,6 +168,7 @@ h2.sec {
     color: $color2;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
+    font-weight: 800;
     padding: 15px;
     animation-name: circulo;
     animation-duration: 5s;
@@ -215,49 +207,47 @@ h2.sec {
     padding: 15px;
 
     .productos {
-        border: 1px solid black;
+        border: 1px solid rgba(0, 0, 0, 0.288);
         text-align: center;
         padding: 15px;
         margin-bottom: 10px;
 
         .iphone-img img {
-            @include sizes(300px, 210px, cover, center)
-            // width: 300px;
-            // height: 210px;
-            // background-size: cover;
-            // background-position: center;
+            @include sizes(48vh, 200px, cover, center)
         }
+        
         .iphone11-img img{
-            @include sizes(300px, 210px, cover, center)
+            @include sizes(48vh, 200px, cover, center)
         }
 
         .samsungj7-img img{
-            @include sizes(300px, 210px, cover, center)
+            @include sizes(48vh, 200px, cover, center)
         }
 
         .samsungj4-img img{
-            @include sizes(300px, 210px, cover, center)
+            @include sizes(48vh, 200px, cover, center)
         }
 
         .samsungj6-img img{
-            @include sizes(300px, 210px, cover, center)
+            @include sizes(48vh, 200px, cover, center)
         }
 
         .samsungj3-img img{
-            @include sizes(300px, 210px, cover, center)
+            @include sizes(48vh, 200px, cover, center)
         }
 
         .samsungj2-img img{
-            @include sizes(300px, 210px, cover, center)
+            @include sizes(48vh, 200px, cover, center)
         }
 
         .samsungj1-img img{
-            @include sizes(300px, 210px, cover, center)
+            @include sizes(48vh, 200px, cover, center)
         }
 
         h3 {
             margin-bottom: 20px;
             font-weight: 1000;
+            font-size: 20px;
             text-align: center;
         }
 
@@ -293,26 +283,21 @@ h2.sec {
     }
 }
 
-@media only screen and (max-width:480px) {
-    h1{
-        font-size: 25px;
+.card {
+    text-align: center;
+
+    .card-title {
+        font-weight: 1000;
     }
-    .celulares{
-        flex-direction: column;
-    }
-    .formulario{
-        flex-direction: column;
-    }
-    .nosotros{
-        flex-direction: column;
+
+    &:hover {
+        transform: scale(1.08);
+        transition: all 0.9s;
     }
 }
 
-@media only screen and (min-width:481px) and (max-width:780px) {
-    .celulares{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+.card a {
+    background-color: $color3;
 }
 
 .nosotros {
@@ -369,6 +354,7 @@ h2.sec {
 }
 
 .galeria {
+    background-image: linear-gradient( #ffffff , #1d161698 );
     background-color: $color2;
     width: $ancho;
     min-height: 500px;
@@ -397,37 +383,37 @@ h2.sec {
     }
 
     .item2 {
-        background-image: url(img/cellphones-g73eb54059_640.jpg);
+        background-image: url(img/iphone-13-carouselpro-max-g07e556508_640.jpg);
         /* grid-column: 2/3;
             grid-row: 1/2; */
     }
 
     .item3 {
-        background-image: url(img/cellphones-g9f8479ba2_1280.jpg);
+        background-image: url(img/iphone-carousel.jpg);
         /* grid-column: 3/5;
             grid-row: 1/2; */
     }
 
     .item4 {
-        background-image: url(img/iphones-gfc0487711_1280.jpg);
+        background-image: url(img/iphone-carouselg1f97eb489_640.jpg);
         /* grid-column: 2/3;
             grid-row: 2/4; */
     }
 
     .item5 {
-        background-image: url(img/cellphones-g73eb54059_640.jpg);
+        background-image: url(img/iphone12pro-g07d79f4f5_640.jpg);
         /* grid-column: 3/4;
             grid-row: 2/3; */
     }
 
     .item6 {
-        background-image: url(img/mobile-g03f014300_640.jpg);
+        background-image: url(img/iphone14-ge9c12596c_640.jpg);
         /* grid-column: 4/5;
             grid-row: 2/3;  */
     }
 
     .item7 {
-        background-image: url(img/samsung-g264de75e1_640.jpg);
+        background-image: url(img/iphone11-g0ecc59835_640.jpg);
         /* grid-column: 1/2;
             grid-row: 3/4; */
     }
@@ -439,6 +425,84 @@ h2.sec {
     }
 }
 
+footer {
+    text-align: center;
+    font-size: 30px;
+    background-color: $color3;
+    color: $color2;
+    padding: 20px;
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: $color2;
+        letter-spacing: 6px;
+        font-size: 40px;
+    }
+}
+
+.subir {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-family: 45px;
+    color: $color2;
+    background-color: $color3;
+    text-align: center;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border: 3px solid #fff;
+
+    &:hover {
+        box-shadow: 0 0 5px $color3, 0 0 5px $color3;
+        color: #fff;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .carousel-inner{
+        height: auto;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .celulares{
+        flex-direction: column;
+    }
+    .formulario{
+        flex-direction: column;
+    }
+    .nosotros{
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (min-width:481px) and (max-width:780px) {
+    .celulares{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+    .formulario{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .nosotros{
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width:660px) and (max-width:780px) {
+    .formulario{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media only screen and (min-width:480px) {
     .galeria{
         grid-template-columns: 1fr 1fr;
@@ -446,7 +510,22 @@ h2.sec {
     }
 }
 
-@media only screen and (min-width:768px) and (max-width:1023px) {
+@media only screen and (min-width:481px) and (max-width:560px){
+    .celulares{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-width:781px) and (max-width:1075px) {
+    .carousel-item{
+        background-position: center;
+        background-size: cover;
+    }
+    .celulares{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
     .galeria{
         grid-template-columns: repeat(3, 1fr);
     }
@@ -482,80 +561,18 @@ h2.sec {
         grid-column: 2/4;
         grid-row: 4/5;
     }
-
 }
 
-@media only screen and (min-width:1024px) {
+@media only screen and (min-width:960px) and (max-width:1075px){
+    .celulares{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width:1076px) {
     .galeria{
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 200px 200px;
     }
 }
-
-footer {
-    text-align: center;
-    font-size: 30px;
-    background-color: $color3;
-    color: $color2;
-    padding: 20px;
-
-    p {
-        margin-bottom: 20px;
-    }
-
-    a {
-        color: orange;
-        letter-spacing: 6px;
-        font-size: 50px;
-    }
-}
-
-.subir {
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
-    font-family: 25px;
-    color: $color2;
-    background-color: $color4;
-    text-align: center;
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    border: 3px solid #fff;
-
-    .subir:hover {
-        box-shadow: 0 0 5px #fff;
-        color: #fff;
-    }
-}
-
-// comienzo de bootstrap
-.logo-inicio {
-    float: left;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 0 0 5px $color1;
-    font-size: 25px;
-
-    .span {
-        color: $color3;
-        font-weight: bold;
-        text-shadow: 0 0 5px black 0 0 5px black
-    }
-}
-.carousel-inner {
-    width: $ancho;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-}
-.card a {
-    background-color: $color3;
-}
-.card {
-    text-align: center;
-}
-.card-title {
-    font-weight: bold;
-}
-// fin de boostrap
